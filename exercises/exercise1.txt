@@ -1,0 +1,45 @@
+[40] pry(main)> p = Brewery.create name: 'BrewDog', year: 2007
+   (0.0ms)  begin transaction
+  Brewery Create (0.2ms)  INSERT INTO "breweries" ("name", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "BrewDog"], ["year", 2007], ["created_at", "2018-09-12 15:51:14.199044"], ["updated_at", "2018-09-12 15:51:14.199044"]]
+   (7.6ms)  commit transaction
+=> #<Brewery:0x00005558f8e77498 id: 5, name: "BrewDog", year: 2007, created_at: Wed, 12 Sep 2018 15:51:14 UTC +00:00, updated_at: Wed, 12 Sep 2018 15:51:14 UTC +00:00>
+[41] pry(main)> p.save
+   (0.0ms)  begin transaction
+   (0.0ms)  commit transaction
+=> true
+[42] pry(main)> b = Beer.create name: 'Punk IPA', style: 'IPA', brewery_id: p.id
+   (0.0ms)  begin transaction
+  Brewery Load (0.2ms)  SELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT ?  [["id", 5], ["LIMIT", 1]]
+  Beer Create (0.3ms)  INSERT INTO "beers" ("name", "style", "brewery_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Punk IPA"], ["style", "IPA"], ["brewery_id", 5], ["created_at", "2018-09-12 15:56:37.359433"], ["updated_at", "2018-09-12 15:56:37.359433"]]
+   (6.0ms)  commit transaction
+=> #<Beer:0x00005558f8ee81e8 id: 13, name: "Punk IPA", style: "IPA", brewery_id: 5, created_at: Wed, 12 Sep 2018 15:56:37 UTC +00:00, updated_at: Wed, 12 Sep 2018 15:56:37 UTC +00:00>
+[43] pry(main)> b.ratings.create score: 16
+   (0.0ms)  begin transaction
+  Rating Create (0.2ms)  INSERT INTO "ratings" ("score", "beer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["score", 16], ["beer_id", 13], ["created_at", "2018-09-12 15:57:44.742619"], ["updated_at", "2018-09-12 15:57:44.742619"]]
+   (5.8ms)  commit transaction
+=> #<Rating:0x00005558f841dc68 id: 4, score: 16, beer_id: 13, created_at: Wed, 12 Sep 2018 15:57:44 UTC +00:00, updated_at: Wed, 12 Sep 2018 15:57:44 UTC +00:00>
+[44] pry(main)> b.ratings.create score: 20
+   (0.0ms)  begin transaction
+  Rating Create (0.2ms)  INSERT INTO "ratings" ("score", "beer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["score", 20], ["beer_id", 13], ["created_at", "2018-09-12 15:58:04.134516"], ["updated_at", "2018-09-12 15:58:04.134516"]]
+   (6.9ms)  commit transaction
+=> #<Rating:0x00005558f8f878d8 id: 5, score: 20, beer_id: 13, created_at: Wed, 12 Sep 2018 15:58:04 UTC +00:00, updated_at: Wed, 12 Sep 2018 15:58:04 UTC +00:00>
+[45] pry(main)> b = Beer.create name: 'Nanny State', style: 'lowalcohol', brewery_id: p.id
+   (0.0ms)  begin transaction
+  Brewery Load (0.1ms)  SELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT ?  [["id", 5], ["LIMIT", 1]]
+  Beer Create (0.4ms)  INSERT INTO "beers" ("name", "style", "brewery_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Nanny State"], ["style", "lowalcohol"], ["brewery_id", 5], ["created_at", "2018-09-12 15:59:23.598757"], ["updated_at", "2018-09-12 15:59:23.598757"]]
+   (8.6ms)  commit transaction
+=> #<Beer:0x00005558f8fc7348 id: 14, name: "Nanny State", style: "lowalcohol", brewery_id: 5, created_at: Wed, 12 Sep 2018 15:59:23 UTC +00:00, updated_at: Wed, 12 Sep 2018 15:59:23 UTC +00:00>
+[46] pry(main)> b.ratings.create score: 18
+   (0.0ms)  begin transaction
+  Rating Create (0.2ms)  INSERT INTO "ratings" ("score", "beer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["score", 18], ["beer_id", 14], ["created_at", "2018-09-12 15:59:51.326547"], ["updated_at", "2018-09-12 15:59:51.326547"]]
+   (6.6ms)  commit transaction
+=> #<Rating:0x00005558f82a8270 id: 6, score: 18, beer_id: 14, created_at: Wed, 12 Sep 2018 15:59:51 UTC +00:00, updated_at: Wed, 12 Sep 2018 15:59:51 UTC +00:00>
+[47] pry(main)> b.ratings.create 24
+ArgumentError: When assigning attributes, you must pass a hash as an argument.
+from /home/mevid/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activemodel-5.2.1/lib/active_model/attribute_assignment.rb:30:in `assign_attributes'
+[48] pry(main)> b.ratings.create score: 24
+   (0.0ms)  begin transaction
+  Rating Create (0.2ms)  INSERT INTO "ratings" ("score", "beer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["score", 24], ["beer_id", 14], ["created_at", "2018-09-12 16:00:17.830308"], ["updated_at", "2018-09-12 16:00:17.830308"]]
+   (6.9ms)  commit transaction
+=> #<Rating:0x00005558f8201ba0 id: 7, score: 24, beer_id: 14, created_at: Wed, 12 Sep 2018 16:00:17 UTC +00:00, updated_at: Wed, 12 Sep 2018 16:00:17 UTC +00:00>
+
