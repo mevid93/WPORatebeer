@@ -13,4 +13,10 @@ class Beer < ApplicationRecord
         return sum*1.0/ratings.size
     end
 
+    # oluen paranneltu merkkijonoesitys
+    def to_s
+        brewery = Brewery.find(self.brewery_id)
+        "#{self.name} (#{brewery.name})"
+    end
+
 end

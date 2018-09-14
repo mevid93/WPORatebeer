@@ -7,4 +7,5 @@ class Rating < ApplicationRecord
         "#{beer.name} #{score}"
     end
 
+
 end
