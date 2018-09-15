@@ -14,8 +14,14 @@ class RatingsController < ApplicationController
 
     # POST /ratings
     def create
-        raise
         Rating.create params.require(:rating).permit(:score, :beer_id)
+        redirect_to ratings_path
+    end
+
+    # DELETE /ratings/1
+    def destroy
+        rating = Rating.find(params[:id])
+        rating.delete
         redirect_to ratings_path
     end
 
