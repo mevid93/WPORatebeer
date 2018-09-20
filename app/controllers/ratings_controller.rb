@@ -15,10 +15,11 @@ class RatingsController < ApplicationController
   def create
     # otetaan luotu reittaus muuttujaan
     @rating = Rating.create params.require(:rating).permit(:score, :beer_id)
-    @rating.user = current_user
+
+    @rating.user = current_user if !current_user.nil?
 
     if @rating.save
-      redirect_to ratings_path
+      redirect_to user_path current_user
     else
       @beers = Beer.all
       render :new
