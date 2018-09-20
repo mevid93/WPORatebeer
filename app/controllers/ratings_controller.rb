@@ -16,6 +16,8 @@ class RatingsController < ApplicationController
     # otetaan luotu reittaus muuttujaan
     @rating = Rating.create params.require(:rating).permit(:score, :beer_id)
 
+    # seuraava rivi ei toiminut herokussa suoraan, vaan
+    # vaadittiin nil? tarkastelu... ei kyllä mitään järkeä
     @rating.user = current_user if !current_user.nil?
 
     if @rating.save
