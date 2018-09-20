@@ -3,6 +3,7 @@
 <p id="notice"><%= notice %> </P>
 
 <%= form_tag session_path do %>
-    <%= text_field_tag :username, params[:username] %>
+    username <%= text_field_tag :username, params[:username] %> </br>
+    password <%= password_field_tag :password, params[:password] %> </br>
     <%= submit_tag "Log in" %>
 <% end %>

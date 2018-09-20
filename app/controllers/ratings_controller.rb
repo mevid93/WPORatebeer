@@ -28,7 +28,7 @@ class RatingsController < ApplicationController
   # DELETE /ratings/1
   def destroy
     rating = Rating.find(params[:id])
-    rating.delete
+    rating.delete if current_user == rating.user
     redirect_to user_path(current_user)
   end
 end
