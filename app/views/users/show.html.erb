@@ -4,6 +4,10 @@
 
 <p>
   Has <%= pluralize(@user.ratings.count, 'rating') %>, average <%= @user.average_rating %>
+  <% if not @user.ratings.empty? %>
+    <p> Favorite beer style: <%= @user.favorite_style() %></p>
+    <p> Favorite brewery: <%= @user.favorite_brewery().name %></p>
+  <% end %>
 </p>
 
 <% if not @user.beer_clubs.empty? %>

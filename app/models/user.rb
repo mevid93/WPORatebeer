@@ -21,4 +21,64 @@ class User < ApplicationRecord
 
     errors.add(:password, "must contain at least 1 digit") if password.nil? || password !~ /\A([a-zA-Z]|\d)*[\d]([a-zA-Z]|\d)*\z/
   end
+
+  def favorite_beer
+    return nil if ratings.empty?
+
+    ratings.order(score: :desc).limit(1).first.beer
+  end
+
+  # käyttäjän mieli oluttyyli
+  def favorite_style
+    return nil if ratings.empty?
+
+    styles = ratings.map { |r| r.beer.style }.uniq
+    favorite_style = nil
+    max_average = 0
+    styles.each { |style|
+      average = style_average_rating(style)
+      if average > max_average
+        max_average = average
+        favorite_style = style
+      end
+    }
+    favorite_style
+  end
+
+  # metodi laskee keskiarvon käyttäjän tekemille arvosteluille tietylle olut tyylille
+  def style_average_rating(style)
+    return 0 if style.nil? || ratings.empty?
+
+    ret = ratings.map { |r| [r.beer.style, r.score] if r.beer.style == style }.compact
+    return 0 if ret.empty?
+
+    ret.reduce(0) { |sum, indv| sum + indv[1] } / ret.length.to_f
+  end
+
+  # käyttäjän mielipanimo
+  def favorite_brewery
+    return nil if ratings.empty?
+
+    breweries = ratings.map { |r| r.beer.brewery.id }.uniq
+    favorite = nil
+    max_average = 0
+    breweries.each { |brewery_id|
+      average = brewery_average_rating(brewery_id)
+      if average > max_average
+        max_average = average
+        favorite = brewery_id
+      end
+    }
+    favorite = Brewery.find(favorite)
+  end
+
+  # metodi laskee keskiarvon käyttäjän tekemille arvosteluille tietylle olut tyylille
+  def brewery_average_rating(brewery_id)
+    return 0 if brewery_id.nil? || ratings.empty?
+
+    ret = ratings.map { |r| r.score if r.beer.brewery.id == brewery_id }.compact
+    return 0 if ret.empty?
+
+    ret.reduce(0, :+) / ret.length.to_f
+  end
 end
