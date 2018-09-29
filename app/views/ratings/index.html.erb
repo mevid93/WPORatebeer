@@ -6,7 +6,7 @@
     <% end %>
 </ul>
 
-<p>Total number of ratings: <%= @ratings.size %></p>
+<p>Number of ratings: <%= @ratings.size %></p>
 
 <% if not current_user.nil? %>
 <p><%= link_to 'New Rating', new_rating_path %></p>
