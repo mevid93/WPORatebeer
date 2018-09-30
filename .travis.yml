@@ -1,7 +1,13 @@
 language: ruby
 rvm:
 - 2.5.1
-
 script:
-- bundle exec rails db:migrate 
+- bundle exec rails db:migrate
 - bundle exec rspec -fd spec
+deploy:
+  provider: heroku
+  api_key:
+    secure: Ngy2rqzoCjLMJyTGTHpWMq3c+QfVSwR+AwGeIofcCr6HEkYTHqxfmgJMSKlfiRIwJJb7z64SJPJr24R840RUFRIRw7Jqn7iTV7w1GrVODkig3kRxx+T7QQetBRLREjWBAYsLufM1yhMQm/Ri7JA1mtpQCHW/25iOVF2z2rB4VrOs7zO0keJZwaz2FDiREPq8m+DWkuN+e8z2RMXJInzqWJo5kZSl+ouK0NIQa/ljtN2cbAxChCYzXzhdCgLypMcN4hnIrrHxP39g5HRXJ4aM2xM9yr0JitWfQ/GVS0kw7jvlg9l4hayouQy9g4DcctBDT0ENBN5w0ZC5qYqQRc0hjob18iM/40woJVfWxvdwyAdAfzhfhcrxqFaPYSndCBpFzTdG0AICvpTP0GzkmM3KpO90LzsGzx6gIlM74OS5mRfDDFP2DJ41LYQIFTqhK3at3f/ZY3cdSMIpcAxgsgsARKxXiz3ZCDLCE/V6rI+ChoRNt7UQ/HH99AhomsZpW6ixXl28mzEbxKsARbGII3wGOwdyWznZbKGg7FuAMDhw/oyruvTHkgCQeLemQlk3LgpNng58aLm6WGRCgHiyQ5zKlJMH7oZOLZOerSoEuNPR1eRy4bXzl2muiFqX44FHeG/xEHy8+qXqJBz19U0bCOKW8r03uZ+CO66ytThrLFFu1lI=
+  app: fierce-thicket-13416
+  on:
+    repo: mevid93/WPORatebeer
