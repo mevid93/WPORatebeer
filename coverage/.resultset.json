@@ -536,6 +536,36 @@
         0,
         0
       ],
+      "/home/mevid/GitHub/ratebeer/app/models/place.rb": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "/home/mevid/GitHub/ratebeer/app/controllers/places_controller.rb": [
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
       "/home/mevid/GitHub/ratebeer/app/controllers/beer_clubs_controller.rb": [
         0,
         0,
@@ -714,6 +744,6 @@
         0
       ]
     },
-    "timestamp": 1538299248
+    "timestamp": 1538406784
   }
 }
