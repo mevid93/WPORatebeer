@@ -187,7 +187,7 @@
         1,
         null,
         1,
-        170,
+        182,
         null,
         121,
         null,
@@ -493,6 +493,48 @@
         null,
         null
       ],
+      "/home/mevid/GitHub/ratebeer/lib/beermapping_api.rb": [
+        1,
+        1,
+        3,
+        3,
+        3,
+        3,
+        null,
+        2,
+        null,
+        2,
+        6,
+        null,
+        null,
+        null,
+        1,
+        3,
+        null,
+        null
+      ],
+      "/home/mevid/GitHub/ratebeer/app/models/place.rb": [
+        1,
+        1,
+        5,
+        null,
+        null
+      ],
+      "/home/mevid/GitHub/ratebeer/app/controllers/places_controller.rb": [
+        1,
+        1,
+        null,
+        null,
+        1,
+        3,
+        3,
+        1,
+        null,
+        2,
+        null,
+        null,
+        null
+      ],
       "/home/mevid/GitHub/ratebeer/app/controllers/ratings_controller.rb": [
         1,
         null,
@@ -533,36 +575,6 @@
         null
       ],
       "/home/mevid/GitHub/ratebeer/app/jobs/application_job.rb": [
-        0,
-        0
-      ],
-      "/home/mevid/GitHub/ratebeer/app/models/place.rb": [
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "/home/mevid/GitHub/ratebeer/app/controllers/places_controller.rb": [
-        0,
-        0,
-        0,
-        null,
-        0,
-        0,
-        0,
-        0,
-        0,
-        null,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
         0,
         0
       ],
@@ -744,6 +756,6 @@
         0
       ]
     },
-    "timestamp": 1538406784
+    "timestamp": 1538473375
   }
 }
