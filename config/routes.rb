@@ -18,8 +18,10 @@ Rails.application.routes.draw do
   delete 'signout', to: 'sessions#destroy'
 
   resources :ratings, only: [:index, :new, :create, :destroy]
+  resources :places, only: [:index, :show]
 
   resource :session, only: [:index, :new, :create, :destroy]
+
 
 end
 
