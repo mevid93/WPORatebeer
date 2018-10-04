@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<h2><%= @style.name %></h2>
+
+<p>
+<%= @style.description %>
+</p>
+
+<h3>beers</h3>
+
+<ul>
+    <% @style.beers.each do |beer| %>
+        <li> <%= link_to beer.name, beer_path(beer.id) %> by <%= link_to beer.brewery.name, brewery_path(beer.brewery.id) %> </li>
+    <% end %>
+</ul>

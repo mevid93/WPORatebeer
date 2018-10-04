@@ -32,7 +32,7 @@ class User < ApplicationRecord
   def favorite_style
     return nil if ratings.empty?
 
-    styles = ratings.map { |r| r.beer.style }.uniq
+    styles = ratings.map { |r| r.beer.style.name }.uniq
     favorite_style = nil
     max_average = 0
     styles.each { |style|
@@ -49,7 +49,7 @@ class User < ApplicationRecord
   def style_average_rating(style)
     return 0 if style.nil? || ratings.empty?
 
-    ret = ratings.map { |r| [r.beer.style, r.score] if r.beer.style == style }.compact
+    ret = ratings.map { |r| [r.beer.style.name, r.score] if r.beer.style.name == style }.compact
     return 0 if ret.empty?
 
     ret.reduce(0) { |sum, indv| sum + indv[1] } / ret.length.to_f

@@ -38,7 +38,8 @@ describe "Users page" do
   before :each do
     @user = FactoryBot.create(:user)
     @user2 = FactoryBot.create(:user, username: "Toinen", password: "Toinen1", password_confirmation:"Toinen1")
-    @beer = FactoryBot.create(:beer, name: "Testiolut", style: "Testityyli")
+    @style = FactoryBot.create(:style, name: "Beerish")
+    @beer = FactoryBot.create(:beer, name: "Testiolut", style: @style)
     @beer2 = FactoryBot.create(:beer, name: "NoNoNoBeer")
     set_many_ratings_for_beer({user: @user, beer: @beer}, 23, 2)
     set_many_ratings_for_beer({user: @user2, beer: @beer2}, 34)
@@ -63,7 +64,7 @@ describe "Users page" do
 
   it "lists users favorite beer style and brewery when user has ratings" do
     visit user_path(@user)
-    expect(page).to have_content("Favorite beer style: #{@beer.style}")
+    expect(page).to have_content("Favorite beer style: #{@beer.style.name}")
     expect(page).to have_content("Favorite brewery: #{@beer.brewery.name}")
   end
 end
