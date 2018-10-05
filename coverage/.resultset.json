@@ -1,31 +1,31 @@
 {
   "RSpec": {
     "coverage": {
-      "/home/mevid/GitHub/ratebeer/app/helpers/application_helper.rb": [
+      "/home/mevid/Github/WPORatebeer/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/home/mevid/GitHub/ratebeer/app/helpers/beer_clubs_helper.rb": [
+      "/home/mevid/Github/WPORatebeer/app/helpers/beer_clubs_helper.rb": [
         1,
         null
       ],
-      "/home/mevid/GitHub/ratebeer/app/helpers/beers_helper.rb": [
+      "/home/mevid/Github/WPORatebeer/app/helpers/beers_helper.rb": [
         1,
         null
       ],
-      "/home/mevid/GitHub/ratebeer/app/helpers/breweries_helper.rb": [
+      "/home/mevid/Github/WPORatebeer/app/helpers/breweries_helper.rb": [
         1,
         null
       ],
-      "/home/mevid/GitHub/ratebeer/app/helpers/memberships_helper.rb": [
+      "/home/mevid/Github/WPORatebeer/app/helpers/memberships_helper.rb": [
         1,
         null
       ],
-      "/home/mevid/GitHub/ratebeer/app/helpers/users_helper.rb": [
+      "/home/mevid/Github/WPORatebeer/app/helpers/users_helper.rb": [
         1,
         null
       ],
-      "/home/mevid/GitHub/ratebeer/app/models/beer.rb": [
+      "/home/mevid/Github/WPORatebeer/app/models/beer.rb": [
         1,
         1,
         null,
@@ -49,12 +49,12 @@
         null,
         null
       ],
-      "/home/mevid/GitHub/ratebeer/app/models/application_record.rb": [
+      "/home/mevid/Github/WPORatebeer/app/models/application_record.rb": [
         1,
         1,
         null
       ],
-      "/home/mevid/GitHub/ratebeer/app/models/concerns/rating_average.rb": [
+      "/home/mevid/Github/WPORatebeer/app/models/concerns/rating_average.rb": [
         1,
         1,
         null,
@@ -69,7 +69,7 @@
         null,
         null
       ],
-      "/home/mevid/GitHub/ratebeer/app/models/user.rb": [
+      "/home/mevid/Github/WPORatebeer/app/models/user.rb": [
         1,
         1,
         null,
@@ -155,12 +155,12 @@
         null,
         null
       ],
-      "/home/mevid/GitHub/ratebeer/app/models/style.rb": [
+      "/home/mevid/Github/WPORatebeer/app/models/style.rb": [
         1,
         1,
         null
       ],
-      "/home/mevid/GitHub/ratebeer/app/controllers/sessions_controller.rb": [
+      "/home/mevid/Github/WPORatebeer/app/controllers/sessions_controller.rb": [
         1,
         1,
         null,
@@ -187,7 +187,7 @@
         null,
         null
       ],
-      "/home/mevid/GitHub/ratebeer/app/controllers/application_controller.rb": [
+      "/home/mevid/Github/WPORatebeer/app/controllers/application_controller.rb": [
         1,
         null,
         1,
@@ -203,7 +203,7 @@
         null,
         null
       ],
-      "/home/mevid/GitHub/ratebeer/app/controllers/users_controller.rb": [
+      "/home/mevid/Github/WPORatebeer/app/controllers/users_controller.rb": [
         1,
         1,
         null,
@@ -286,7 +286,7 @@
         null,
         null
       ],
-      "/home/mevid/GitHub/ratebeer/app/models/rating.rb": [
+      "/home/mevid/Github/WPORatebeer/app/models/rating.rb": [
         1,
         1,
         1,
@@ -301,19 +301,19 @@
         null,
         null
       ],
-      "/home/mevid/GitHub/ratebeer/app/models/membership.rb": [
+      "/home/mevid/Github/WPORatebeer/app/models/membership.rb": [
         1,
         1,
         1,
         null
       ],
-      "/home/mevid/GitHub/ratebeer/app/models/beer_club.rb": [
+      "/home/mevid/Github/WPORatebeer/app/models/beer_club.rb": [
         1,
         1,
         1,
         null
       ],
-      "/home/mevid/GitHub/ratebeer/app/models/brewery.rb": [
+      "/home/mevid/Github/WPORatebeer/app/models/brewery.rb": [
         1,
         1,
         null,
@@ -337,7 +337,7 @@
         null,
         null
       ],
-      "/home/mevid/GitHub/ratebeer/app/controllers/beers_controller.rb": [
+      "/home/mevid/Github/WPORatebeer/app/controllers/beers_controller.rb": [
         1,
         1,
         1,
@@ -423,7 +423,7 @@
         null,
         null
       ],
-      "/home/mevid/GitHub/ratebeer/app/controllers/breweries_controller.rb": [
+      "/home/mevid/Github/WPORatebeer/app/controllers/breweries_controller.rb": [
         1,
         1,
         1,
@@ -501,7 +501,7 @@
         null,
         null
       ],
-      "/home/mevid/GitHub/ratebeer/lib/beermapping_api.rb": [
+      "/home/mevid/Github/WPORatebeer/lib/beermapping_api.rb": [
         1,
         1,
         6,
@@ -539,14 +539,14 @@
         null,
         null
       ],
-      "/home/mevid/GitHub/ratebeer/app/models/place.rb": [
+      "/home/mevid/Github/WPORatebeer/app/models/place.rb": [
         1,
         1,
         5,
         null,
         null
       ],
-      "/home/mevid/GitHub/ratebeer/app/controllers/places_controller.rb": [
+      "/home/mevid/Github/WPORatebeer/app/controllers/places_controller.rb": [
         1,
         1,
         null,
@@ -571,7 +571,7 @@
         null,
         null
       ],
-      "/home/mevid/GitHub/ratebeer/app/controllers/ratings_controller.rb": [
+      "/home/mevid/Github/WPORatebeer/app/controllers/ratings_controller.rb": [
         1,
         null,
         null,
@@ -610,125 +610,19 @@
         null,
         null
       ],
-      "/home/mevid/GitHub/ratebeer/app/jobs/application_job.rb": [
-        0,
-        0
-      ],
-      "/home/mevid/GitHub/ratebeer/app/controllers/beer_clubs_controller.rb": [
-        0,
-        0,
-        0,
-        null,
-        null,
-        null,
-        0,
-        0,
-        0,
-        null,
-        null,
-        null,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        null,
-        null,
-        0,
-        0,
-        0,
-        null,
-        null,
-        0,
-        0,
-        null,
-        null,
-        null,
-        0,
-        0,
-        null,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        null,
-        null,
-        null,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        null,
-        null,
-        null,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        null,
-        0,
-        null,
-        null,
-        0,
-        0,
-        0,
-        null,
-        null,
+      "/home/mevid/Github/WPORatebeer/app/channels/application_cable/connection.rb": [
         0,
         0,
         0,
         0
       ],
-      "/home/mevid/GitHub/ratebeer/app/controllers/styles_controller.rb": [
-        0,
-        0,
-        null,
-        0,
-        0,
-        0,
-        null,
-        0,
-        0,
-        null,
-        0,
-        0,
-        null,
-        0,
-        0,
-        null,
-        0,
-        0,
-        null,
-        0,
-        0,
-        null,
-        0,
-        null,
+      "/home/mevid/Github/WPORatebeer/app/channels/application_cable/channel.rb": [
         0,
         0,
         0,
         0
       ],
-      "/home/mevid/GitHub/ratebeer/app/controllers/memberships_controller.rb": [
+      "/home/mevid/Github/WPORatebeer/app/controllers/memberships_controller.rb": [
         0,
         0,
         null,
@@ -810,25 +704,131 @@
         0,
         0
       ],
-      "/home/mevid/GitHub/ratebeer/app/channels/application_cable/connection.rb": [
+      "/home/mevid/Github/WPORatebeer/app/controllers/styles_controller.rb": [
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        null,
+        0,
+        0,
+        null,
+        0,
+        0,
+        null,
+        0,
+        0,
+        null,
+        0,
+        0,
+        null,
+        0,
+        null,
         0,
         0,
         0,
         0
       ],
-      "/home/mevid/GitHub/ratebeer/app/channels/application_cable/channel.rb": [
+      "/home/mevid/Github/WPORatebeer/app/controllers/beer_clubs_controller.rb": [
+        0,
+        0,
+        0,
+        null,
+        null,
+        null,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        0,
+        0,
+        0,
+        null,
+        null,
+        0,
+        0,
+        null,
+        null,
+        null,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        0,
+        0,
+        0,
+        null,
+        null,
         0,
         0,
         0,
         0
       ],
-      "/home/mevid/GitHub/ratebeer/app/mailers/application_mailer.rb": [
+      "/home/mevid/Github/WPORatebeer/app/mailers/application_mailer.rb": [
         0,
         0,
+        0,
+        0
+      ],
+      "/home/mevid/Github/WPORatebeer/app/jobs/application_job.rb": [
         0,
         0
       ]
     },
-    "timestamp": 1538646933
+    "timestamp": 1538667424
   }
 }
