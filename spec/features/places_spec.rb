@@ -5,6 +5,9 @@ describe "Places" do
     allow(BeermappingApi).to receive(:places_in).with("kumpula").and_return(
       [Place.new(name:"Oljenkorsi", id:1)]
     )
+    allow(ApixuApi).to receive(:weather_in).with("kumpula").and_return(
+      Weather.new()
+    )
     visit places_path
     fill_in('city', with:'kumpula')
     click_button "Search"
@@ -14,6 +17,9 @@ describe "Places" do
   it "if many are returned by the api, they all are shown at the page" do
     allow(BeermappingApi).to receive(:places_in).with("Otaniemi").and_return(
         [Place.new(name:"Fat Lizzard", id:1), Place.new(name:"Smökki", id:2)]
+    )
+    allow(ApixuApi).to receive(:weather_in).with("Otaniemi").and_return(
+      Weather.new()
     )
     visit places_path
     fill_in('city', with:"Otaniemi")
@@ -25,6 +31,9 @@ describe "Places" do
   it "if none are returned by the api, correct message is shown at the page" do
     allow(BeermappingApi).to receive(:places_in).with("Espoo").and_return(
         []
+    )
+    allow(ApixuApi).to receive(:weather_in).with("Espoo").and_return(
+      Weather.new()
     )
     visit places_path
     fill_in('city', with:"Espoo")
