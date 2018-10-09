@@ -1,17 +1,14 @@
 
-<h1>
+<h2>
   <%= @beer_club.name %> <%= @beer_club.city %>
-</h1>
+</h2>
 
 <p>
-  Founded <%= @beer_club.founded %>
+  Founded 
+  <%= @beer_club.founded %>
 </p>
 
-<% if not @beer_club.members.empty? %>
-<h2>
-  Members
-</h2>
-<% end %>
+<h3>Members</h3>
 
 <ul>
     <% @beer_club.members.each do |member| %>
@@ -37,5 +34,6 @@
 
 <% end %>
 
-<%= link_to 'Edit', edit_beer_club_path(@beer_club) if current_user %></br>
-<%= link_to 'Destroy', @beer_club, method: :delete, data: { confirm: 'Are you sure?' } if current_user %>
+<%= link_to('Edit', edit_beer_club_path(@beer_club), class:"btn btn-primary") if current_user %>
+</br>
+<%= link_to('Destroy', @beer_club, {class:"btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } }) if current_user %>

@@ -1,16 +1,16 @@
 
 <h2>
-  <%=@beer.name%>
+  <%= @beer.name %>
 </h2>
 
 <p>
   <strong>Style:</strong>
-  <%= @beer.style.name %>
+  <%= link_to @beer.style.name, @beer.style %>
 </p>
 
 <p>
   <strong>Brewery:</strong>
-  <%= @beer.brewery.name %>
+  <%= link_to @beer.brewery.name, @beer.brewery %>
 </p>
 
 <p>
@@ -30,6 +30,7 @@
     <%= f.submit %>
   <% end %>
 
-  <%= link_to 'Edit', edit_beer_path(@beer) %></br>
-  <%= link_to 'Destroy', @beer, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <%= link_to 'Edit', edit_beer_path(@beer), class:"btn btn-primary" %>
+  </br>
+  <%= link_to 'Destroy', @beer, {class:"btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } } %>
 <% end %>

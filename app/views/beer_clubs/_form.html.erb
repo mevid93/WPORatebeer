@@ -11,22 +11,20 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :name %>
     <%= form.text_field :name %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :founded %>
     <%= form.number_field :founded %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :city %>
     <%= form.text_field :city %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  <button type="submit", class="btn btn-primary">Create Beer club</button>
 <% end %>

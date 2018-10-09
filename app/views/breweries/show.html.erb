@@ -1,16 +1,16 @@
 
-<p>
-  <h2><%= @brewery.name %></h2>
-</p>
+<h2>
+  <%= @brewery.name %>
+</h2>
 
-<p>
-  <i>Established in <%= @brewery.year %></i>
-</p>
 
-<p>
-  Number of beers 
-  <%= @brewery.beers.count %>
-</p>
+<em>
+  Established in 
+  <%= @brewery.year %>
+</em>
+
+
+<p> Number of beers <%= @brewery.beers.count %> </p>
 
 <p>
   <% @brewery.beers.each do |beer| %>
@@ -25,6 +25,6 @@
   <% end %>
 </p>
 
-<%= link_to 'Edit', edit_brewery_path(@brewery) if current_user %> 
-<%= link_to 'Destroy', @brewery, method: :delete, data: { confirm: 'Are you sure?' } if current_user %> 
+<%= link_to('Edit', edit_brewery_path(@brewery), class:"btn btn-primary") if current_user %> 
+<%= link_to('Destroy', @brewery, {class:"btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' }}) if current_user %> 
 <%= link_to 'Back', breweries_path %>

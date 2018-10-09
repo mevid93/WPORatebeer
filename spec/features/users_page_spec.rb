@@ -49,7 +49,7 @@ describe "Users page" do
   it "lists ratings done by user" do
     visit user_path(@user)
     expect(page).to have_content("Pekka")
-    expect(page).to have_content("Has #{@user.ratings.count} ratings")
+    expect(page).to have_content("Has made #{@user.ratings.count} ratings")
     expect(page).to have_content("Testiolut")
     expect(page).not_to have_content("NoNoNoBeer")
   end
