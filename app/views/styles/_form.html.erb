@@ -12,14 +12,14 @@
   <% end %>
 
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, class:"form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :description %>
-    <%= form.text_area(:description, size: '50x10') %>
+    <%= form.text_area(:description, size: '50x10', class:"form-control") %>
   </div>
 
   <div class="actions">
