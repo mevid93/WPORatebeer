@@ -1,13 +1,13 @@
 
 <h2>
   <%= @brewery.name %>
+  <% if not @brewery.active %>
+    <span class="badge badge-info">retired</span>
+  <% end %>
 </h2>
 
 
-<em>
-  Established in 
-  <%= @brewery.year %>
-</em>
+<p><em> Established in <%= @brewery.year %> </em></p>
 
 
 <p> Number of beers <%= @brewery.beers.count %> </p>
@@ -19,12 +19,14 @@
 </p>
 
 <p>
-  Has <%= pluralize(@brewery.ratings.count, 'rating') %>
-  <% if @brewery.ratings.count > 0 %>
-    , average <%= @brewery.average_rating %>
+  <% if @brewery.ratings.empty? %>
+    beer has not yet been rated!
+  <% else %>
+    Has <%= pluralize(@brewery.ratings.count, 'rating') %>, average <%= @brewery.average_rating %>
   <% end %>
 </p>
 
-<%= link_to('Edit', edit_brewery_path(@brewery), class:"btn btn-primary") if current_user %> 
-<%= link_to('Destroy', @brewery, {class:"btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' }}) if current_user %> 
-<%= link_to 'Back', breweries_path %>
+<% if current_user %>
+  <%= link_to('Edit', edit_brewery_path(@brewery), class:"btn btn-primary") %> 
+  <%= link_to('Destroy', @brewery, {class:"btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' }}) %> 
+<% end %>
