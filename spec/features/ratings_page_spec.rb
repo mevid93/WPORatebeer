@@ -28,10 +28,10 @@ end
 describe "Ratings page" do
   let!(:user) { FactoryBot.create :user }
 
-  it "should not have ane before been created" do
+  it "should not have any before been created" do
     visit ratings_path
-    expect(page).to have_content 'List of ratings'
-    expect(page).to have_content 'Number of ratings: 0'
+    expect(page).to have_content 'Ratings'
+    expect(page).to have_content 'Total number of ratings: 0'
   end
 
   describe "when ratings exists" do
@@ -43,9 +43,9 @@ describe "Ratings page" do
 
     it "lists the breweries and their total number" do
       visit ratings_path
-      expect(page).to have_content 'List of ratings'
+      expect(page).to have_content 'Ratings'
       expect(page).to have_content 'anonymous'
-      expect(page).to have_content "Number of ratings: #{@ratings.count}"
+      expect(page).to have_content "Total number of ratings: #{@ratings.count}"
     end
   end
 end
