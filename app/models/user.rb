@@ -81,4 +81,12 @@ class User < ApplicationRecord
 
     ret.reduce(0, :+) / ret.length.to_f
   end
+
+  def self.top(var_n)
+    sorted_by_rating_in_desc_order = User.all.sort_by{ |u| -u.ratings.count }
+    return [] if sorted_by_rating_in_desc_order.empty?
+
+    result = sorted_by_rating_in_desc_order[0..var_n - 1]
+    result.compact
+  end
 end

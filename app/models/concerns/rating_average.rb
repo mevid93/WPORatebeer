@@ -8,6 +8,6 @@ module RatingAverage
     return sum if ratings.empty?
 
     sum = ratings.reduce(0) { |t, rating| t + rating.score }
-    sum * 1.0 / ratings.size
+    (sum * 1.0 / ratings.size).round(2)
   end
 end

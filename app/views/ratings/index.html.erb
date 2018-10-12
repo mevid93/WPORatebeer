@@ -2,15 +2,36 @@
 
 <div class="container">
   <div class="row">
-    <div class="col">
-      <%= render 'top', title: "beers", list: @top_beers %>
+    <div class="col col-sm-4">
+      <%= render 'top', title: "Best beers", column_title: "average", list: @top_beers %>
     </div>
-    <div class="col">
-      <%= render 'top', title: "breweries", list: @top_breweries %>
+    <div class="col col-sm-4">
+      <%= render 'top', title: "Best breweries", column_title: "average", list: @top_breweries %>
+    </div>
+    <div class="col col-sm-4">
+      <%= render 'top', title: "Best styles", column_title: "average", list: @top_styles %>
     </div>
   </div>
 </div>
 
+<h3>Most active users</h3>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th></th>
+      <th>ratings</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @top_users.each do |user| %>
+      <tr>
+        <td><%= link_to user.username, user %></td>
+        <td><%= user.ratings.count %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
 
 <h3>Recent ratings</h3>

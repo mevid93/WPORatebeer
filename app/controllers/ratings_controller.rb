@@ -6,6 +6,8 @@ class RatingsController < ApplicationController
     @recent_ratings = Rating.recent
     @top_beers = Beer.top 3
     @top_breweries = Brewery.top 3
+    @top_styles = Style.top 3
+    @top_users = User.top 3
   end
 
   # GET /ratings/new

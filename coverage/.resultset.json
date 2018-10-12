@@ -68,12 +68,12 @@
         null,
         null,
         1,
-        31,
-        31,
-        31,
+        39,
+        39,
+        39,
         null,
-        59,
-        26,
+        75,
+        34,
         null,
         null
       ],
@@ -161,12 +161,30 @@
         null,
         14,
         null,
+        null,
+        1,
+        4,
+        2,
+        null,
+        2,
+        2,
+        null,
         null
       ],
       "/home/mevid/GitHub/ratebeer/app/models/style.rb": [
         1,
         1,
         1,
+        1,
+        1,
+        null,
+        1,
+        7,
+        2,
+        null,
+        1,
+        1,
+        null,
         null
       ],
       "/home/mevid/GitHub/ratebeer/app/controllers/sessions_controller.rb": [
@@ -648,6 +666,8 @@
         2,
         2,
         2,
+        2,
+        2,
         null,
         null,
         null,
@@ -934,6 +954,6 @@
         0
       ]
     },
-    "timestamp": 1539258478
+    "timestamp": 1539358188
   }
 }
