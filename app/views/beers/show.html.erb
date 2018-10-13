@@ -17,7 +17,7 @@
   <% if @beer.ratings.empty? %>
     Beer has not yet been rated!
   <% else %>
-    Has <%= pluralize(@beer.ratings.count, 'rating') %>, average <%= @beer.average_rating %>
+    Has <%= pluralize(@beer.ratings.count, 'rating') %>, average <%= round(@beer.average_rating) %>
   <% end %>
 </p>
 
@@ -27,10 +27,10 @@
   <%= form_for(@rating) do |f| %>
     <%= f.hidden_field :beer_id, value: @beer.id %>
     score: <%= f.number_field :score %>
-    <%= f.submit %>
+    <%= f.submit :submit => "", class:"btn btn-primary" %>
   <% end %>
-
-  <%= link_to 'Edit', edit_beer_path(@beer), class:"btn btn-primary" %>
-  </br>
-  <%= link_to 'Destroy', @beer, {class:"btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } } %>
 <% end %>
+
+<br>
+
+<%= edit_and_destroy_buttons(@beer) %>

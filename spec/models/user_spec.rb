@@ -82,7 +82,7 @@ RSpec.describe User, type: :model do
     it "is the only style if only one rating" do
       beer = FactoryBot.create(:beer)
       rating = FactoryBot.create(:rating, score: 20, beer: beer, user: user)
-      expect(user.favorite_style).to eq(beer.style.name)
+      expect(user.favorite_style).to eq(beer.style)
     end
 
     it "is the one style with highest average rating if several rated" do
@@ -92,7 +92,7 @@ RSpec.describe User, type: :model do
       beer3 = FactoryBot.create(:beer, style: FactoryBot.create(:style))
       set_many_ratings_for_beer({ user: user, beer: beer2 }, 11, 12, 13, 14)
       set_many_ratings_for_beer({ user: user, beer: beer3 }, 1, 12, 3, 14)
-      expect(user.favorite_style).to eq(style.name)
+      expect(user.favorite_style).to eq(style)
     end
   end
 

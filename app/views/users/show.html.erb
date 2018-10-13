@@ -1,25 +1,41 @@
 
 <h2>
   <%= @user.username %>
+  <% if @user.closed? && current_user && current_user.admin? %>
+    <span class="badge badge-info">account closed</span>
+  <% end %>
 </h2>
 
-<p>
-  Has made <%= pluralize(@user.ratings.count, 'rating') %>, average <%= @user.average_rating %>
-  <% if not @user.ratings.empty? %>
-    <p> Favorite beer: <%= @user.favorite_beer.name %>
-    <p> Favorite beer style: <%= @user.favorite_style() %></p>
-    <p> Favorite brewery: <%= @user.favorite_brewery().name %></p>
+<% if current_user && current_user.admin? %>
+  <% if @user.closed? %>
+    <%= link_to "open account", toggle_closed_user_path(@user.id), method: :post, class: "btn btn-danger" %>
+  <% else %>
+    <%= link_to "close account", toggle_closed_user_path(@user.id), method: :post, class: "btn btn-danger" %>
   <% end %>
-</p>
+<% end %>
 
-<p>
+
+<p>Has made <%= pluralize(@user.ratings.count, 'rating') %>, average <%= round(@user.average_rating) %></p>
+<% if not @user.ratings.empty? %>
+  Favorite beer: <%= @user.favorite_beer.name %>
+  <br>
+  Favorite beer style: <%= @user.favorite_style().name %>
+  <br>
+  Favorite brewery: <%= @user.favorite_brewery().name %>
+  <br>
+<% end %>
+
+
+
 <% if not @user.beer_clubs.empty? %>
-  member of
+  <br>
+  <p>member of</p>
   <% @user.beer_clubs.each do |beer_club| %>
     <li> <%= link_to beer_club.name, beer_club %> </li>
   <% end %>
+  <br>
 <% end %>
-</p>
+
 
 <h3> ratings </h3>
 <ul>
@@ -33,8 +49,7 @@
   <% end %>
 </ul>
 
-
-<% if @user == current_user %>
-<%= link_to('Edit', edit_user_path(@user), class:"btn btn-primary") %> |
-<td><%= link_to('Destroy', @user, { class:"btn btn-danger", method: :delete, data: { confirm: "Are you sure?" } } ) %></td> 
+<% if current_user == @user %>
+  <%= link_to 'Edit', edit_user_path(@user.id), class: "btn btn-primary"%>
+  <%= link_to 'Destroy', @user, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
 <% end %>

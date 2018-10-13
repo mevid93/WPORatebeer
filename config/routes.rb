@@ -20,6 +20,14 @@ Rails.application.routes.draw do
 
   resources :ratings, only: [:index, :new, :create, :destroy]
   resources :places, only: [:index, :show]
+  
+  resources :breweries do
+    post 'toggle_activity', on: :member
+  end
+  
+  resources :users do
+    post 'toggle_closed', on: :member
+  end
 
   resource :session, only: [:index, :new, :create, :destroy]
 

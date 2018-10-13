@@ -22,64 +22,36 @@ class User < ApplicationRecord
     errors.add(:password, "must contain at least 1 digit") if password.nil? || password !~ /\A([a-zA-Z]|\d)*[\d]([a-zA-Z]|\d)*\z/
   end
 
+  # käyttäjän lempiout
   def favorite_beer
     return nil if ratings.empty?
 
     ratings.order(score: :desc).limit(1).first.beer
   end
 
-  # käyttäjän mieli oluttyyli
+  # käyttäjän lempityyli
   def favorite_style
-    return nil if ratings.empty?
-
-    styles = ratings.map { |r| r.beer.style.name }.uniq
-    favorite_style = nil
-    max_average = 0
-    styles.each { |style|
-      average = style_average_rating(style)
-      if average > max_average
-        max_average = average
-        favorite_style = style
-      end
-    }
-    favorite_style
-  end
-
-  # metodi laskee keskiarvon käyttäjän tekemille arvosteluille tietylle olut tyylille
-  def style_average_rating(style)
-    return 0 if style.nil? || ratings.empty?
-
-    ret = ratings.map { |r| [r.beer.style.name, r.score] if r.beer.style.name == style }.compact
-    return 0 if ret.empty?
-
-    ret.reduce(0) { |sum, indv| sum + indv[1] } / ret.length.to_f
+    favorite(:style)
   end
 
   # käyttäjän mielipanimo
   def favorite_brewery
-    return nil if ratings.empty?
-
-    breweries = ratings.map { |r| r.beer.brewery.id }.uniq
-    favorite = nil
-    max_average = 0
-    breweries.each { |brewery_id|
-      average = brewery_average_rating(brewery_id)
-      if average > max_average
-        max_average = average
-        favorite = brewery_id
-      end
-    }
-    favorite = Brewery.find(favorite)
+    favorite(:brewery)
   end
 
-  # metodi laskee keskiarvon käyttäjän tekemille arvosteluille tietylle olut tyylille
-  def brewery_average_rating(brewery_id)
-    return 0 if brewery_id.nil? || ratings.empty?
+  def favorite(groupped_by)
+    return nil if ratings.empty?
 
-    ret = ratings.map { |r| r.score if r.beer.brewery.id == brewery_id }.compact
-    return 0 if ret.empty?
+    grouped_ratings = ratings.group_by{ |r| r.beer.send(groupped_by) }
+    averages = grouped_ratings.map do |group, ratings|
+      { group: group, score: average_of(ratings) }
+    end
 
-    ret.reduce(0, :+) / ret.length.to_f
+    averages.max_by{ |r| r[:score] }[:group]
+  end
+
+  def average_of(ratings)
+    ratings.sum(&:score).to_f / ratings.count
   end
 
   def self.top(var_n)
