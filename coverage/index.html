@@ -14,26 +14,26 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2018-10-15T17:13:13+03:00">2018-10-15T17:13:13+03:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2018-10-17T11:41:13+03:00">2018-10-17T11:41:13+03:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="red">48.04%</span></span>
+    (<span class="covered_percent"><span class="red">48.23%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         2.51
+         2.5
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>33</b> files in total.
-    <b>535</b> relevant lines. 
-    <span class="green"><b>257</b> lines covered</span> and
+    <b>537</b> relevant lines. 
+    <span class="green"><b>259</b> lines covered</span> and
     <span class="red"><b>278</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -92,20 +92,20 @@
       
       <tr>
         <td class="strong"><a href="#d8387277e059ecef7eb26e6a55a11730164eea7b" class="src_link" title="app/controllers/beers_controller.rb">app/controllers/beers_controller.rb</a></td>
-        <td class="red strong">67.39 %</td>
-        <td>93</td>
-        <td>46</td>
-        <td>31</td>
+        <td class="red strong">68.09 %</td>
+        <td>96</td>
+        <td>47</td>
+        <td>32</td>
         <td>15</td>
         <td>1.0</td>
       </tr>
       
       <tr>
         <td class="strong"><a href="#126083297587ce56ad7dd4e28d9fe28bdc2034c2" class="src_link" title="app/controllers/breweries_controller.rb">app/controllers/breweries_controller.rb</a></td>
-        <td class="red strong">43.9 %</td>
-        <td>85</td>
-        <td>41</td>
-        <td>18</td>
+        <td class="red strong">45.24 %</td>
+        <td>88</td>
+        <td>42</td>
+        <td>19</td>
         <td>23</td>
         <td>0.6</td>
       </tr>
@@ -389,7 +389,7 @@
           <div class="file_list_container" id="Controllers">
   <h2>
     <span class="group_name">Controllers</span>
-    (<span class="covered_percent"><span class="red">33.33%</span></span>
+    (<span class="covered_percent"><span class="red">33.7%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
@@ -400,8 +400,8 @@
   <a name="Controllers"></a>
   <div>
     <b>10</b> files in total.
-    <b>357</b> relevant lines. 
-    <span class="green"><b>119</b> lines covered</span> and
+    <b>359</b> relevant lines. 
+    <span class="green"><b>121</b> lines covered</span> and
     <span class="red"><b>238</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -440,20 +440,20 @@
       
       <tr>
         <td class="strong"><a href="#d8387277e059ecef7eb26e6a55a11730164eea7b" class="src_link" title="app/controllers/beers_controller.rb">app/controllers/beers_controller.rb</a></td>
-        <td class="red strong">67.39 %</td>
-        <td>93</td>
-        <td>46</td>
-        <td>31</td>
+        <td class="red strong">68.09 %</td>
+        <td>96</td>
+        <td>47</td>
+        <td>32</td>
         <td>15</td>
         <td>1.0</td>
       </tr>
       
       <tr>
         <td class="strong"><a href="#126083297587ce56ad7dd4e28d9fe28bdc2034c2" class="src_link" title="app/controllers/breweries_controller.rb">app/controllers/breweries_controller.rb</a></td>
-        <td class="red strong">43.9 %</td>
-        <td>85</td>
-        <td>41</td>
-        <td>18</td>
+        <td class="red strong">45.24 %</td>
+        <td>88</td>
+        <td>42</td>
+        <td>19</td>
         <td>23</td>
         <td>0.6</td>
       </tr>
@@ -1766,10 +1766,10 @@
         <div class="source_table" id="d8387277e059ecef7eb26e6a55a11730164eea7b">
   <div class="header">
     <h3>app/controllers/beers_controller.rb</h3>
-    <h4><span class="red">67.39 %</span> covered</h4>
+    <h4><span class="red">68.09 %</span> covered</h4>
     <div>
-      <b>46</b> relevant lines. 
-      <span class="green"><b>31</b> lines covered</span> and
+      <b>47</b> relevant lines. 
+      <span class="green"><b>32</b> lines covered</span> and
       <span class="red"><b>15</b> lines missed.</span>
     </div>
   </div>
@@ -1798,7 +1798,7 @@
         <li class="covered" data-hits="1" data-linenumber="4">
           <span class="hits">1</span>
           
-          <code class="ruby">  before_action :ensure_that_signed_in, except: [:index, :show]</code>
+          <code class="ruby">  before_action :ensure_that_signed_in, except: [:index, :show, :list]</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="5">
@@ -2236,100 +2236,118 @@
         <li class="covered" data-hits="1" data-linenumber="77">
           <span class="hits">1</span>
           
-          <code class="ruby">  private</code>
+          <code class="ruby">  def list</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="78">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="79">
           
           
-          <code class="ruby">  # Use callbacks to share common setup or constraints between actions.</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="80">
           <span class="hits">1</span>
           
-          <code class="ruby">  def set_beer</code>
+          <code class="ruby">  private</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="81">
+        <li class="never" data-hits="" data-linenumber="81">
           
           
-          <code class="ruby">    @beer = Beer.find(params[:id])</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="82">
           
           
+          <code class="ruby">  # Use callbacks to share common setup or constraints between actions.</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="83">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def set_beer</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="84">
+          
+          
+          <code class="ruby">    @beer = Beer.find(params[:id])</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="85">
+          
+          
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="83">
+        <li class="never" data-hits="" data-linenumber="86">
           
           
           <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="84">
-          
-          
-          <code class="ruby">  # Never trust parameters from the scary internet, only allow the white list through.</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="85">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def beer_params</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="86">
-          <span class="hits">2</span>
-          
-          <code class="ruby">    params.require(:beer).permit(:name, :style_id, :brewery_id)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="87">
           
           
+          <code class="ruby">  # Never trust parameters from the scary internet, only allow the white list through.</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="88">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def beer_params</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="89">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    params.require(:beer).permit(:name, :style_id, :brewery_id)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="90">
+          
+          
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="88">
+        <li class="never" data-hits="" data-linenumber="91">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="89">
+        <li class="covered" data-hits="1" data-linenumber="92">
           <span class="hits">1</span>
           
           <code class="ruby">  def set_breweries_and_styles_for_template</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="90">
+        <li class="covered" data-hits="4" data-linenumber="93">
           <span class="hits">4</span>
           
           <code class="ruby">    @breweries = Brewery.all</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="91">
+        <li class="covered" data-hits="4" data-linenumber="94">
           <span class="hits">4</span>
           
           <code class="ruby">    @styles = Style.all</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="92">
+        <li class="never" data-hits="" data-linenumber="95">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="93">
+        <li class="never" data-hits="" data-linenumber="96">
           
           
           <code class="ruby">end</code>
@@ -2343,10 +2361,10 @@
         <div class="source_table" id="126083297587ce56ad7dd4e28d9fe28bdc2034c2">
   <div class="header">
     <h3>app/controllers/breweries_controller.rb</h3>
-    <h4><span class="red">43.9 %</span> covered</h4>
+    <h4><span class="red">45.24 %</span> covered</h4>
     <div>
-      <b>41</b> relevant lines. 
-      <span class="green"><b>18</b> lines covered</span> and
+      <b>42</b> relevant lines. 
+      <span class="green"><b>19</b> lines covered</span> and
       <span class="red"><b>23</b> lines missed.</span>
     </div>
   </div>
@@ -2369,7 +2387,7 @@
         <li class="covered" data-hits="1" data-linenumber="3">
           <span class="hits">1</span>
           
-          <code class="ruby">  before_action :ensure_that_signed_in, except: [:index, :show]</code>
+          <code class="ruby">  before_action :ensure_that_signed_in, except: [:index, :show, :list]</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="4">
@@ -2795,70 +2813,88 @@
         <li class="covered" data-hits="1" data-linenumber="74">
           <span class="hits">1</span>
           
-          <code class="ruby">  private</code>
+          <code class="ruby">  def list</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="75">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="76">
           
           
-          <code class="ruby">  # Use callbacks to share common setup or constraints between actions.</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="77">
           <span class="hits">1</span>
           
-          <code class="ruby">  def set_brewery</code>
+          <code class="ruby">  private</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="78">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    @brewery = Brewery.find(params[:id])</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="79">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="80">
+        <li class="never" data-hits="" data-linenumber="78">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="81">
+        <li class="never" data-hits="" data-linenumber="79">
           
           
-          <code class="ruby">  # Never trust parameters from the scary internet, only allow the white list through.</code>
+          <code class="ruby">  # Use callbacks to share common setup or constraints between actions.</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="82">
+        <li class="covered" data-hits="1" data-linenumber="80">
           <span class="hits">1</span>
           
-          <code class="ruby">  def brewery_params</code>
+          <code class="ruby">  def set_brewery</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="83">
+        <li class="covered" data-hits="1" data-linenumber="81">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">    params.require(:brewery).permit(:name, :year, :active)</code>
+          <code class="ruby">    @brewery = Brewery.find(params[:id])</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="84">
+        <li class="never" data-hits="" data-linenumber="82">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="85">
+        <li class="never" data-hits="" data-linenumber="83">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="84">
+          
+          
+          <code class="ruby">  # Never trust parameters from the scary internet, only allow the white list through.</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="85">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def brewery_params</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="86">
+          
+          
+          <code class="ruby">    params.require(:brewery).permit(:name, :year, :active)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="87">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="88">
           
           
           <code class="ruby">end</code>
