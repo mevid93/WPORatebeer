@@ -11,6 +11,8 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    @confirmed_memberships = @user.memberships.select(&:confirmed?)
+    @pending_memberships = @user.memberships.reject(&:confirmed?)
   end
 
   # GET /users/new

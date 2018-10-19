@@ -32,6 +32,10 @@ Rails.application.routes.draw do
     post 'toggle_closed', on: :member
   end
 
+  resources :memberships do
+    post 'toggle_confirmed', on: :member
+  end
+
   resource :session, only: [:index, :new, :create, :destroy]
 
 

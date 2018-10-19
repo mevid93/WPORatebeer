@@ -20,6 +20,8 @@ class BeerClubsController < ApplicationController
   # GET /beer_clubs/1
   # GET /beer_clubs/1.json
   def show
+    @confirmed_memberships = @beer_club.memberships.select(&:confirmed?)
+    @pending_memberships = @beer_club.memberships.reject(&:confirmed?)
     if current_user && !current_user.memberships.where(beer_club_id: @beer_club.id).empty?
       @membership = current_user.memberships.where(beer_club_id: @beer_club.id).first
     else
@@ -44,6 +46,8 @@ class BeerClubsController < ApplicationController
 
     respond_to do |format|
       if @beer_club.save
+        # luonti onnistui, joten lisätään kerhon luonut käyttäjä sen jäseneksi
+        @beer_club.memberships.create(user_id: current_user.id, confirmed: true)
         format.html { redirect_to @beer_club, notice: 'Beer club was successfully created.' }
         format.json { render :show, status: :created, location: @beer_club }
       else
