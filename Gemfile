@@ -51,6 +51,8 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'pry-rails'
+  #miniprofiler
+  gem 'rack-mini-profiler'
 end
 
 group :production do
@@ -79,6 +81,7 @@ gem 'httparty'
 # bootstrap
 gem 'bootstrap', '~> 4.1.3'
 gem 'jquery-rails'
+
 
 
 

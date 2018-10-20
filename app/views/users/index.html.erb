@@ -5,6 +5,9 @@
   <thead>
     <tr>
       <th>Username</th>
+      <th> rated beers </th>
+      <th> total ratings </th>
+      <th></th>
     </tr>
   </thead>
 
@@ -12,13 +15,16 @@
     <% @users.each do |user| %>
       <tr>
         <td><%= link_to user.username, user %></td>
-        <% if user.closed? && current_user && current_user.admin? %>
-          <td><span class="badge badge-info">account closed</span></td>
-        <% end %>
-        <td></td>
+        <td><%= user.beers.size %></td>
+        <td><%= user.ratings.size %></td>
+        <td>
+          <% if user.closed? && current_user && current_user.admin? %>
+            <span class="badge badge-info">account closed</span>
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>
+
 </table>
 
-<br>
