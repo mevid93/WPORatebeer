@@ -2,12 +2,15 @@ class RatingsController < ApplicationController
   # GET /ratings
   # GET /ratings.json
   def index
-    @ratings = Rating.all
-    @recent_ratings = Rating.recent
-    @top_beers = Beer.top 3
-    @top_breweries = Brewery.top 3
-    @top_styles = Style.top 3
-    @top_users = User.top 3
+    # top oluet, panimot, tyyli käyttäjät ja viimeaikaiset reittaukset on cachattu
+    # tarkistetaan kullekkin erikseen onko fragemntti olemassa ja tarvittaessa noudetaan
+    # expiroitunut tieto uudestaan
+    @ratings_count = Rating.all.count if !request.format.html? || !fragment_exist?("ratings_count")
+    @recent_ratings = Rating.recent if !request.format.html? || !fragment_exist?("recent_ratings")
+    @top_beers = Beer.top 3 if !request.format.html? || !fragment_exist?("top_beers")
+    @top_breweries = Brewery.top 3 if !request.format.html? || !fragment_exist?("top_breweries")
+    @top_styles = Style.top 3 if !request.format.html? || !fragment_exist?("top_styles")
+    @top_users = User.top 3 if !request.format.html? || !fragment_exist?("top_users")
   end
 
   # GET /ratings/new

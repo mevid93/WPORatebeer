@@ -82,6 +82,12 @@ gem 'httparty'
 gem 'bootstrap', '~> 4.1.3'
 gem 'jquery-rails'
 
+# sucker punch single-process Ruby asynchronous processing library
+gem 'sucker_punch', '~> 2.0'
+
+# omniauth github for github sign-up
+gem 'omniauth-github'
+
 
 
 

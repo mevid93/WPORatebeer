@@ -42,6 +42,7 @@
       "/home/mevid/GitHub/ratebeer/app/models/beer.rb": [
         1,
         1,
+        1,
         null,
         1,
         1,
@@ -60,14 +61,6 @@
         0,
         null,
         0,
-        null,
-        null,
-        1,
-        7,
-        2,
-        null,
-        1,
-        1,
         null,
         null
       ],
@@ -88,6 +81,19 @@
         null,
         75,
         34,
+        null,
+        null
+      ],
+      "/home/mevid/GitHub/ratebeer/app/models/concerns/top.rb": [
+        1,
+        1,
+        null,
+        1,
+        21,
+        6,
+        null,
+        3,
+        3,
         null,
         null
       ],
@@ -160,6 +166,7 @@
       "/home/mevid/GitHub/ratebeer/app/models/brewery.rb": [
         1,
         1,
+        1,
         null,
         1,
         1,
@@ -182,14 +189,6 @@
         0,
         0,
         null,
-        null,
-        1,
-        7,
-        2,
-        null,
-        1,
-        1,
-        null,
         null
       ],
       "/home/mevid/GitHub/ratebeer/app/models/style.rb": [
@@ -198,14 +197,7 @@
         1,
         1,
         1,
-        null,
         1,
-        7,
-        2,
-        null,
-        1,
-        1,
-        null,
         null
       ],
       "/home/mevid/GitHub/ratebeer/app/controllers/beers_controller.rb": [
@@ -357,6 +349,26 @@
         0,
         null,
         0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        null,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        0,
+        0,
+        null,
         null,
         null
       ],
@@ -694,6 +706,9 @@
         null,
         null,
         1,
+        null,
+        null,
+        null,
         2,
         2,
         2,
@@ -1013,6 +1028,6 @@
         0
       ]
     },
-    "timestamp": 1540026775
+    "timestamp": 1540113121
   }
 }

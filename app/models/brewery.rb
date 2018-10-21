@@ -1,5 +1,6 @@
 class Brewery < ApplicationRecord
   include RatingAverage
+  extend Top
 
   validates :name, presence: true
   validates :year, numericality: { only_integer: true,
@@ -21,13 +22,5 @@ class Brewery < ApplicationRecord
   def restart
     self.year = 2018
     puts "changed year to #{year}"
-  end
-
-  def self.top(var_n)
-    sorted_by_rating_in_desc_order = Brewery.all.sort_by{ |b| -(b.average_rating || 0) }
-    return [] if sorted_by_rating_in_desc_order.empty?
-
-    result = sorted_by_rating_in_desc_order[0..var_n - 1]
-    result.compact
   end
 end
